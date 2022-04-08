@@ -1,14 +1,14 @@
 import axios from 'axios'
 
-const USER_API_BASEURL = "http://localhost:8080/api/v1/"
+const USER_API_BASEURL = "http://localhost:8090/api/v1/"
 
 class UserService{
     login(){
-        return axios.get(USER_API_BASEURL)
+        return axios.post(USER_API_BASEURL+"login")
     }
     register(user){
-        return axios.post(USER_API_BASEURL, user)
+        return axios.post(USER_API_BASEURL+"register", user)
     }
 }
 
-export default new UserService
+export default new UserService()
